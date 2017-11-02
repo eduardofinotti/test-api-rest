@@ -59,7 +59,7 @@ Execute o seguinte comando dentro da raiz do projeto:
 cucumber features
 ```
 
-### Executando tags###
+### Executando tags ###
 Execute o seguinte comando dentro da raiz do projeto:
 ```shell
 cucumber --tags @accounts @books @login
