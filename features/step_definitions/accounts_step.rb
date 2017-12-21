@@ -1,3 +1,42 @@
+Dado("que eu estou na api de films") do
+  @url_token = 'http://swapi.co/api/films/'
+end
+
+Quando("busco os filmes cadastrados") do 
+
+  query = {
+    
+  }
+  @result = NBooksAPI.get(
+    @url_token.to_str,
+    :query => query,
+    :headers => {:content_type => 'application/json'}
+  )
+
+  parsedx = JSON.parse(@result.response.body)
+  #binding.pry
+  
+  # until (parsedx['results'][0]['title']) == nil do
+  #   puts parsedx['results'][0]['title']
+  # end
+  
+  for i in (0..parsedx['results'].length-1) do
+    puts parsedx['results'][i]['title']
+  end
+
+end
+
+Então("mostro os titulos dos filmes") do
+  p "Listar títulos"
+end
+
+Então("tenho um retorno {string}") do |code|
+  expect(@result.response.code).to eq code
+end
+
+
+# ==================================================== #
+
 
 Given("I am on the accounts api page") do
  @url_token = 'https://nbooks.herokuapp.com/api/accounts'

@@ -1,18 +1,24 @@
-@accounts
-Feature: CRUD actions to manipulate accounts
-In order to manipulate the accounts
-As an user
-I want to do the CRUD actions
+# language: pt
+Funcionalidade: CRUD actions to manipulate accounts
 
-Background:
-  Given I am on the accounts api page
+# Enviar um GET para a API http://swapi.co/api/films/ 
+# e exibir o conteúdo do campo “title” de cada elemento da estrutura “results”. 
+# Validar o statuscode da resposta da requisição.
 
-@inserting_a_account
-Scenario: Inserting a new account
-  When I insert a new account
-  Then I receive the code "200"
+@films
+Cenário: Inserting a new account
+  Dado que eu estou na api de films
+  Quando busco os filmes cadastrados 
+  Então mostro os titulos dos filmes
+  E tenho um retorno "200"
 
-@inserting_a_account_already_created
-Scenario: Inserting a new account
-  When I insert an account already created
-  Then I receive the code "409" and the message "O e-mail informado, ja está cadastrado!"
+# Enviar um GET para a API http://swapi.co/api/films/, 
+# validar o status-code da resposta, armazenar o corpo da resposta em uma variável 
+# e exibir todos os títulos que sejam do diretor George Lucas 
+# e que o produtor Rick McCallum tenha participado.
+
+Cenário: Inserting a new account 2
+  Dado que eu estou na api de films
+  Quando busco os filmes cadastrados 
+  Então tenho um retorno "200"
+  E mostro os títulos que sejam do diretor George Lucas e que o produtor Rick McCallum tenha participado
