@@ -1,6 +1,6 @@
 # test-api-rest
 
-# bravi-test-rest
+# test-rest
 Testing Books API (REST) with Cucumber and HttpParty in Ruby language
 http://docs.ninjabooks.apiary.io/
 
@@ -45,7 +45,7 @@ $ ruby -v
 ### Instalando o bundler ###
 Navegar dentro do projeto e instalar o bundler
 ```shell
-cd /bravi-test-rest
+cd /test-rest
 gem install bundler
 ```
 
