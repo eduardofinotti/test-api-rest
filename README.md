@@ -1,6 +1,5 @@
 # test-api-rest
 
-# test-rest
 Testing Books API (REST) with Cucumber and HttpParty in Ruby language
 http://docs.ninjabooks.apiary.io/
 
